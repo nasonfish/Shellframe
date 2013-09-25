@@ -1,7 +1,8 @@
 <?php
 
-function include_e($page = false, $pass = array(), $tutorials){
+function include_e($page = false, $pass = array()){
     if($page !== false && file_exists($page)){
+        global $handler;  // so the file can use it
         include($page);
         return true;
     }
@@ -20,11 +21,7 @@ class PageHandler {
      * @param array $pass What variables to pass along
      */
     public function __construct($template = "index", $pass = array()){
-        require('Tutorials.class.php');
-        require('Predis_Page.class.php');
-        require('PredisPageDoesNotExistException.php');
         $this->template = $template;
-        $this->tutorials = new Tutorials;
         $this->pass = $pass;
         include('../templates/main_tpl.php');
     }
