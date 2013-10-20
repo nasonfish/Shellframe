@@ -1,0 +1,114 @@
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Share Tech', sans-serif;
+}
+
+.i{
+    display: inline;
+}
+
+body{
+    font-family: 'Rokkitt', serif;
+    background: url('/img/fresh_snow.png');
+}
+
+span{
+    display: inline;
+}
+
+p{
+    font-size: 16px;
+}
+
+.margined{
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.marginedx2{
+    margin-left: 14%;
+    margin-right: 14%;
+}
+
+label, input, textarea{
+    display: block;
+    width: 40%;
+    font-size: 14px;
+}
+
+textarea{
+    height: 50px;
+}
+
+.body{
+    margin-top: 20px;
+}
+
+.title{
+    color: black;
+    text-decoration: none;
+}
+.title:hover{
+    color: #494949;
+    text-decoration: none;
+}
+
+.tabletop{ /* Ha! I'm clever! */
+    width: 100%;
+    border-bottom-color: gray;
+}
+.tabletop tr td > a{
+    color: black;
+    text-decoration: none;
+    font-size: 19px;
+    margin-top: 8px;
+    background-color: #cbcbcb;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 4px;
+    width: 25%;
+    margin-left: 9px;
+    font-family: 'Share Tech', sans-serif;
+}
+
+hr{
+    color: gray;
+    background-color: gray;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    height: 2px;
+    border: 1px gray;
+}
+
+.tabletop tr td > a:hover{
+    background-color: #999999;
+}
+
+.text{
+    font-size: 16px;
+}
+
+.entry{
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: white;
+    border: #a7a7a7 groove 1px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+.title a{
+    color: #5fa8b8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.title a:hover{
+    color: #4a8594;
+}
+
+ul{
+    -webkit-padding-start: 0;
+}

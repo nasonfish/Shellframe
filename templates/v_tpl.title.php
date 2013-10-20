@@ -1,0 +1,1 @@
+<?php echo $handler->entry($args[0])->getTitle(); ?>
