@@ -2,11 +2,10 @@
 if(!array_key_exists(0, $args)){
     echo '<h3>403 Access Denied</h3><p>Uh oh.</p>';
 }
-$tag = urldecode($args[0]);
-$results = $handler->redis->tagged($tag);
+$results = $handler->redis->tagged($args[0]);
 ?>
 <div class="margined">
-    <h1>Tag '<?=$tag?>':</h1>
+    <h1>Tag '<?=$args[0]?>':</h1>
 <?php if(empty($results)): ?>
     <h3>No results found.</h3>
 <?php else: ?>

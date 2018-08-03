@@ -6,4 +6,4 @@ if(empty($_POST)){
     exit;
 }
 $id = $handler->redis->create($_POST['title'], $_POST['text'], explode('&', $_POST['tags']));
-header('Location: /v/' . $id . '/' . strtolower(preg_replace('/[^\w-_]/', '-', $_POST['title'])));
+header('Location: /v/' . $id . '/');

@@ -8,7 +8,6 @@
     <link type="text/css" rel="stylesheet" href="/libs/Rainbow/github.css"/>
     <link type="text/css" rel="stylesheet" href="/libs/sliding-tags/12-sliding-tags/css/style.css"/>
     <link type="text/css" rel="stylesheet" href="/app.css"/>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico.png" />
     <?php $this->css(); ?>
 </head>
 <body>
@@ -17,9 +16,11 @@
         <table class="tabletop">
             <tr>
                 <td>
-                    <h1 class="i"><a class="title" href="/">Daniel Barnes</a> </h1><span>a blog</span>
+                    <h1 class="i"><a class="title" href="/">Blog</a> </h1><span>by nasonfish</span>
                 </td>
-                <?php $this->headerLinks(); ?>
+                <td><a href="/all/">Recent Posts</a></td>
+                <td><a href="/random/">Random Post</a></td>
+                <td><a href="/tags/">View tags</a></td>
             </tr>
         </table>
         <hr/>
