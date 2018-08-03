@@ -1,6 +1,6 @@
 <?php
 if(!array_key_exists(0, $args)){
-    echo '<h3>403 Access Denied</h3><p>Uh oh.</p>';
+    echo '<h3>403 Access Denied</h3><p>Unauthorized access</p>';
 }
 $tag = urldecode($args[0]);
 $results = $handler->redis->tagged($tag);

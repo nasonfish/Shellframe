@@ -17,7 +17,7 @@
         <table class="tabletop">
             <tr>
                 <td>
-                    <h1 class="i"><a class="title" href="/">Daniel Barnes</a> </h1><span>a blog</span>
+                    <h1 class="i"><a class="title" href="/">ebookk.pro</a> </h1><span>Development Blog</span>
                 </td>
                 <?php $this->headerLinks(); ?>
             </tr>
