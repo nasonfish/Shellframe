@@ -1,6 +1,6 @@
 <?php
 
-function include_e($page = false, $pass = array()){
+function include_e($page = false, $args = array()){
     if($page !== false && file_exists($page)){
         global $handler;  // so the file can use it
         include($page);
@@ -12,17 +12,16 @@ function include_e($page = false, $pass = array()){
 class PageHandler {
 
     private $template;
-    private $pass;
-    private $tutorials;
+    private $args;
 
     /**
      * Handle the page.
      * @param string $template The name of the page we're using
      * @param array $pass What variables to pass along
      */
-    public function __construct($template = "index", $pass = array()){
+    public function __construct($template = "index", $args = array()){
         $this->template = $template;
-        $this->pass = $pass;
+        $this->args = $args;
         include('../templates/main_tpl.php');
     }
 
@@ -31,7 +30,7 @@ class PageHandler {
             return "404 - Page Not Found";
         }
         if(file_exists('../templates/' . $this->template . '_tpl.title.php')){
-            include_e('../templates/' . $this->template . '_tpl.title.php', $this->pass, $this->tutorials);
+            include_e('../templates/' . $this->template . '_tpl.title.php', $this->args);
             return "";
         }
         if(has('title:' . $this->template)){
@@ -41,27 +40,31 @@ class PageHandler {
     }
 
     public function head(){
-        include_e('../templates/' . $this->template . '_tpl.head.php', $this->pass, $this->tutorials);
+        include_e('../templates/' . $this->template . '_tpl.head.php', $this->args);
         if(!file_exists('../templates/' . $this->template . '_tpl.php')){
             return '<link rel="canonical" href="/404/" />';
         }
         return "";
     }
 
+    public function headerLinks(){
+        include_e('../templates/headers.php', $this->args);
+    }
+
     public function foot(){
-        include_e('../templates/' . $this->template . '_tpl.foot.php', $this->pass, $this->tutorials);
+        include_e('../templates/' . $this->template . '_tpl.foot.php', $this->args);
     }
 
     public function js(){
-        include_e('../templates/' . $this->template . '_tpl.js.php', $this->pass, $this->tutorials);
+        include_e('../templates/' . $this->template . '_tpl.js.php', $this->args);
     }
 
     public function css(){
-        include_e('../templates/' . $this->template . '_tpl.css.php', $this->pass, $this->tutorials);
+        include_e('../templates/' . $this->template . '_tpl.css.php', $this->args);
     }
 
     public function page(){
-        if(!include_e('../templates/' . $this->template . '_tpl.php', $this->pass, $this->tutorials)){
+        if(!include_e('../templates/' . $this->template . '_tpl.php', $this->args)){
             $template = $this->template;
             include('../templates/404_tpl.php');
             //echo "<br/>I couldn't find the page you were looking for, sorry. Maybe you should head <a href='/'>home</a> and find your way back to where you were.<br/><br/>";// Let nasonfish &lt;nasonfish [at] gmail {dot} com&gt; know if you believe this is a mistake.";

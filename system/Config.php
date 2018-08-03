@@ -3,14 +3,14 @@
 include('CustomConfig.php');
 
 function get($key){
-    global $_CONFIG;
-    if(isset($_CONFIG[$key])){
-        return $_CONFIG[$key];
+    global $CONFIG;
+    if(isset($CONFIG[$key])){
+        return $CONFIG[$key];
     }
     return "";
 }
 
 function has($key){
-    global $_CONFIG;
-    return isset($_CONFIG[$key]);
+    global $CONFIG;
+    return isset($CONFIG[$key]);
 }

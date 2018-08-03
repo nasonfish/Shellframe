@@ -1,0 +1,35 @@
+<div class="margined">
+<div class="entry">
+<h2 class="title">Daniel Barnes</h2>
+<div class="text">
+<em>web developer, high school student, IRC fanatic</em>
+
+<p>I'm Daniel Barnes, usually known as <em>nasonfish</em> in the online communities I participate in.</p>
+
+<p>I spend a lot of time programming and hanging out on IRC. Check out some of the stuff I've worked on!</p>
+<table>
+<tr>
+<th style="width: 30%; border-bottom: 2px solid gray;">BHSNotes</th>
+<th style="width: 30%; border-bottom: 2px solid gray;">Purple Podcast</th>
+<th style="width: 30%; border-bottom: 2px solid gray;">Contact me</th>
+</tr>
+<tr>
+<td style="vertical-align: top; padding-left: 5px; padding-right: 5px;"><p><em>BHSNotes.com</em> is a project I started working on earlier this year to help spread easier access of information among something that reigns over the lives of high school students - our classes. Some classes have people sharing documents over e-mail and losing things in countless Google Documents and not working well, and some classes don't have people sharing notes at all.</p>
+<p>It seemed to make sense to improve that with something sustainable and easy to access - I came up with the idea of using little sticky notes as blocks that you can move around and expand, and now I run a website where I maintain notes for the classes I take, and hope that other people add notes for their classes too.</p>
+<p>It's built on Flask and SQLAlchemy for Python, and it's something I feel is relevant to the students and useful for all the students at the school. It's built so it works the best for anyone who uses it, whether it be a teacher driving its use or students contributing notes without the knowledge of the teacher, or an administrator trying to figure out how people are using the program. It's a sustainable piece of software that should have a great impact on the school.</p>
+<p>Check it out at <a href="http://bhsnotes.com/" target="_blank">bhsnotes.com</a>!</p>
+</td>
+<td style="vertical-align: top; border-left: 2px solid gray;padding-left: 5px; padding-right: 5px;">
+<p>I was one of the founding members and I continue to participate in the Purple Podcast group at my school. This group of people develops media for the school to keep people informed about things going on in the school, while providing entertaining content through interviews and interesting and relevant discussion.</p>
+<p>I've particularly held a role of directing cameras and audio during the recordings, but I developed the <a href="http://purplepodcast.com/" target="_blank">website we use</a> so we can reach out to people who want to see the podcast or participate!</p>
+</td>
+<td style="vertical-align: top; border-left: 2px solid gray;padding-left: 5px; padding-right: 5px;">
+<p>Want to get ahold of me? Shoot me an e-mail at nasonfish -at- nasonfish -dot- com, or come find me on the EsperNet IRC network as <em>nasonfish</em>. Bonus points if you can sign/encrypt your e-mail with my <a href="http://keys.gnupg.net/pks/lookup?op=vindex&fingerprint=on&search=0x8A306FE556103EC2" target="_blank">PGP public key!</a></p>
+<p>You can find me on <a href="http://twitter.com/nasonfish" target="_blank">Twitter</a>, <a href="http://github.com/nasonfish" target="_blank">GitHub</a>, and <a href="http://keybase.io/nasonfish" target="_blank">Keybase.io</a> as far as social media goes.</p>
+<p>I'll work on making this website more pretty soon.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>

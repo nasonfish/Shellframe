@@ -102,15 +102,19 @@ class Redis {
         // tags = (tag, tag, tag)
         // tag:<tag> = (1, 2, 3)
         // entry:<id>:tags = (tag, tag, tag)
-        $cmd = new Predis\Command\SetMembers;
-        $cmd->setRawArguments(array('entry:' . $id . ':tags'));
-        $before = $this->predis->executeCommand($cmd);
+        $setmembers = new Predis\Command\SetMembers;
+        $setmembers->setRawArguments(array('entry:' . $id . ':tags'));
+        $before = $this->predis->executeCommand($setmembers);
         $cmd = new Predis\Command\SetRemove;
         foreach($before as $tag){
-            $cmd->setRawArguments(array('tags', $tag));
-            $this->predis->executeCommand($cmd);
             $cmd->setRawArguments(array('tag:' . $tag, $id));
             $this->predis->executeCommand($cmd);
+            $setmembers->setRawArguments(array('tag:' . $tag));
+            $newmembers = $this->predis->executeCommand($setmembers);
+            if(empty($newmembers)){
+                $cmd->setRawArguments(array('tags', $tag));
+                $this->predis->executeCommand($cmd);
+            }
         }
         $cmd = new Predis\Command\SetAdd;
         foreach($new as $tag){
@@ -123,9 +127,9 @@ class Redis {
         $cmd->setRawArguments(array('entry:' . $id  . ':tags'));
         $this->predis->executeCommand($cmd);
         $cmd = new Predis\Command\SetAdd;
-        foreach($new as $id=>$val){
+        foreach($new as $i=>$val){
             if($val === ''){
-                unset($new[$id]);
+                unset($new[$i]);
             }
         }
         sort($new);
@@ -159,7 +163,7 @@ class Redis {
         foreach($this->predis->executeCommand($cmd) as $entry){
             $ret[] = new Entry($entry, $this);
         }
-        return $ret;
+        return array_reverse($ret);
     }
     private function tagged_amt($tag){
         $cmd = new Predis\Command\SetCardinality;
@@ -210,11 +214,22 @@ class Entry {
         return $this->id;
     }
 
+    public function slug(){
+        return strtolower(preg_replace('/[^\w0-9_-]/', '-', $this->getTitle()));
+    }
+
+    public function href(){
+        return sprintf("/v/%s/%s/", $this->getId(), $this->slug());
+    }
+
     public function getTitle(){
         return $this->redis->page_get($this->id, 'title');
     }
     public function getText(){
         return $this->format($this->redis->page_get($this->id, 'text'));
+    }
+    public function getRawText(){
+        return $this->redis->page_get($this->id, 'text');
     }
 
     public function getDate(){
@@ -236,24 +251,26 @@ class Entry {
         );
     }
 
-    public function show($short = false){
+    public function show($short = false, $date = true){
         $ret = '<div class="entry">';
-        $ret .= '<h2 class="title"><a href="/v/%s/">%s</a></h2>';
+        $ret .= '<h2 class="title"><a href="/v/%s/%s/">%s</a></h2>';
         $ret .= '<div class="text">%s</div>';
-        $ret .= '<hr/>';
-        $ret .= '<p class="sign">By %s, on %s</p>';
-        $ret .= '<ul class="tags blue">';
-        foreach($this->getTags() as $tag){
-            $ret .= sprintf('<li><a href="/tag/%s/">%s <span>%s</span></a></li>', $tag, $tag, $this->redis->tagged($tag, true));
+        if($date){
+            $ret .= '<hr/>';
+            $ret .= sprintf('<p class="sign">By %s, on %s</p>', get('author'), $this->getDate());
+            $ret .= '<ul class="tags blue" style="padding-left: 0;">';
+            foreach($this->getTags() as $tag){
+                $ret .= sprintf('<li><a href="/tag/%s/">%s <span>%s</span></a></li>', str_replace('%', '%%', urlencode($tag)), $tag, $this->redis->tagged($tag, true));
+            }
+            $ret .= '</ul>';
+            $ret .= '</div>';
         }
-        $ret .= '</ul>';
-        $ret .= '</div>';
         $text = $this->getText();
         if($short){
             if(strlen($text) > 300){
-                $text = substr($text, 0, 300) . '<a href="/v/'.$this->id.'/">(Read more)</a>';
+                $text = explode('</p>', $text)[0] . '<p><a href="/v/'.$this->id.'/'.strtolower(preg_replace('/[^\w]/', '-', $this->getTitle())).'/">(Read more)</a></p>';
             }
         }
-        return sprintf($ret, $this->id, $this->getTitle(), $text, get('author'), $this->getDate());
+        return sprintf($ret, $this->id, $this->slug(), htmlentities($this->getTitle()), $text);
     }
 }

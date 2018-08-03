@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/nasonfish
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://nasonfish.com
+  * I am nasonfish (https://keybase.io/nasonfish) on keybase.
+  * I have a public key with fingerprint 84EF D359 DED7 FBF0 368D  4771 8A30 6FE5 5610 3EC2
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "84efd359ded7fbf0368d47718a306fe556103ec2",
+            "host": "keybase.io",
+            "key_id": "8a306fe556103ec2",
+            "uid": "7de0a848c05bb7ec03fadf01f5e3a600",
+            "username": "nasonfish"
+        },
+        "service": {
+            "hostname": "nasonfish.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1413662137,
+    "expire_in": 157680000,
+    "prev": "894ffca42299db3d1f03543e6aa55e6967061d961e4d72aeb5f9c4120f537d0b",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.3
+Comment: https://keybase.io/crypto
+
+yMHiAnicZZFdSBRRFMd3tSLXFoQKkV5iFoWFRe7sfK/oQ5k9+JVumpXsdmfuHR1d
+Z7adWT8yE5GkFwUpLCVagh6UjIToYVcLEYvCkNJALGIhkT5M1j7AMoJmpF7qvlzu
+Ob///5xzz6wz3eawLxb1lsYHpA373PTXqO34oUfxTkLUUAfh6ySa8fYlK2oDjoQj
+imoQPoKnsYwoRkAYcbIoA4rlEc1xJA8pwMqYYVgSUFjyEh6iUdMthWkjQh3nK5oZ
+Mx9BBVk+//PR7QSHMIA8zUuAEUUOS4CSIZIBKTOYgiwAFqjjiApbsEmrUNdUWdEb
+iS4PYYZbFQlbTVu1/0XyJa3FVIcjmqFJWshMNRpG2GcpjY6whbZhMfjHJCgqKjIn
+NwWtOKIrmkr4SJOUDMVyJWmSYlkvSXEeAreHlQgOKhbBcCwPzGOVwa3WnAItyxKk
+vV5BQCKFSPPLGJrCLIQMg1mB5QBLIoElMY04L8QiIwsSTXqBzFAcAiJhjXVW1Qgf
+bbYJG0xLXWlQoRGNYKJrZrp+h83usO3amWbtzubIyPq70do3u22Dqc8TbVVtdSsh
+/2BszVMeKuwcX3PPvP9Q7UwufOl9cCdRFx/Pk59UKnv6Fo9CP+AnV09Uq+9KNq47
+oq+u3c90Zg+VBj6uP4zWutSbeeXn3H3dda6enssB49nLF7HnTjh1JbNi4rynqWh5
+7NaFRM18Wby73386N+dGWvv804r0Y+6RhSNOFNvMypuqSibOkM6LuSMFQcko+bGX
+dbGfuF+lscNDa9JkKLXE7S9eBPObNQMrdwMefclXcnu4ObU8OVyvHVxvyk3i13P3
+Vgftfve+leK9woEm6Xtlf+HVnESqIOPx0LfR9lOXkidnswNvk1s/x7qpUedCmWvr
+N/oiFyk=
+=tfFg
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nasonfish
+
+==================================================================
+
